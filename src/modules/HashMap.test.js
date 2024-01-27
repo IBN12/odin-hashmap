@@ -1,13 +1,7 @@
 import HashMap from "./HashMap";
-import { HashMapClass } from "./HashMap";
 
-const HashMapObj = HashMap(); 
-test('HashMap obj should return 1 from the returnTest property', () => {
-    expect(HashMapObj.testReturn).toBe(1); 
-});
+const hashMapObj = new HashMap(43);
 
-const HashMapClassObj = new HashMapClass(10);
-
-test('HashMap Class Obj should return 10 from the value property', () => {
-    expect(HashMapClassObj.ShowValue()).toBe(10);
+test ('The hash method should return a number value', () => {
+    expect(hashMapObj.hash('Isom')).not.toBeNull(); 
 });

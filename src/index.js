@@ -1,2 +1,6 @@
-import HashMap from "./modules/HashMap";
+import { InitializeDomContent } from "./modules/DomContent";
+
+import './utils/style.css'; 
+
+InitializeDomContent();
 
