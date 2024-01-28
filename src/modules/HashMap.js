@@ -10,7 +10,14 @@
  * Note: Hash maps could accommodate various data types for keys like 
  * numbers, strings, objects. But for this project, only handle keys 
  * of type strings. 
+ * 
+ * 3. set(key, value) takes two arguments, the first is a key and the second is a value that is assigned
+ * to this key. If a key already exists, then the old value is overwritten.
+ * 
+ * Remember to grow your buckets size when it needs to, by calculating if 
+ * your bucket has reached the 'load factor'. 
  */
+
 // HashMap Factory Function Test:
 // const HashMap = () => {
 //     const testReturn = 1;
@@ -22,6 +29,7 @@
 export class HashMap{
     constructor(table_size){
         this.table_size = table_size;
+        this.hashCode = null; 
     }
 
     stringToNumber(string){
@@ -40,10 +48,14 @@ export class HashMap{
     }
 
     hash(key){
-        return this.stringToNumber(key);
+        this.hashCode = this.stringToNumber(key);
     }
 
-
+    set(key, value){
+        console.log('HashMap Class key: ', key); // Testing
+        console.log('HashMap Class value: ', value); // Testing 
+        console.log('\n'); // Testing 
+    }
 }
 
 export default HashMap;

@@ -68,5 +68,15 @@ function SubmitButton(){
 function SubmitKey(e){
     e.preventDefault();
     const input = document.querySelector('form > div:nth-child(1) > input'); 
-    console.log('Entered Value: ', input.value); // Testing 
+    const form = document.querySelector('form'); 
+    let string = input.value;
+    form.reset(); 
+    console.log('Entered Value: ', string); // Testing 
+
+    const hashMapObj = new HashMap(43); 
+    hashMapObj.hash(string);
+    console.log('The hash code: ', hashMapObj.hashCode); // Testing
+
+    hashMapObj.set(hashMapObj.hashCode, string);
+
 }
