@@ -168,6 +168,8 @@ function CreateSetField(){
     input.setAttribute('type', 'text');
     input.setAttribute('id', 'name');
     input.setAttribute('name', 'name');
+    input.setAttribute('maxLength', `${30}`); 
+    input.setAttribute('required', `${true}`); 
 
     formSectionOne.appendChild(label);
     formSectionOne.appendChild(input); 
@@ -201,6 +203,7 @@ function CreateGetField(){
     get.setAttribute('type', 'number');
     get.setAttribute('id', 'get-name');
     get.setAttribute('name', 'getName'); 
+    get.setAttribute('required', `${true}`); 
 
     getFormSectionOne.appendChild(getLabel);
     getFormSectionOne.appendChild(get); 
@@ -235,6 +238,7 @@ function CreateRemoveField(){
     removeInput.setAttribute('type', 'number'); 
     removeInput.setAttribute('id', 'remove-name');
     removeInput.setAttribute('name', 'removeName');
+    removeInput.setAttribute('required', `${true}`); 
 
     removeFormSectionOne.appendChild(removeLabel); 
     removeFormSectionOne.appendChild(removeInput);
@@ -267,21 +271,28 @@ function RemoveValue(e){
     const removeForm = document.querySelector('.remove-form');
     const dataField = document.querySelector('.data-field'); 
     
+    if (removeInput.validity.valueMissing)
+    {
+        removeInput.setCustomValidity("Please enter a numerical value first.");
+        removeInput.reportValidity(); 
+    }
+    else
+    {
+        let number = Number(removeInput.value);
 
-    let number = Number(removeInput.value);
+        removeForm.reset(); 
 
-    removeForm.reset(); 
-
-    const HashMapObj = new HashMap(43); 
-
-    dataField.replaceChildren(); 
-    console.log('Removal Index: ', number); // Testing
-    console.log('Removal Index Type: ', typeof(number)); // Testing 
-
-    DisplayRemovedData(HashMapObj.remove(number)); 
-    bucketField.replaceChildren();
-    CreateBuckets();
-    PlaceInBucket();
+        const HashMapObj = new HashMap(43); 
+    
+        dataField.replaceChildren(); 
+        console.log('Removal Index: ', number); // Testing
+        console.log('Removal Index Type: ', typeof(number)); // Testing 
+    
+        DisplayRemovedData(HashMapObj.remove(number)); 
+        bucketField.replaceChildren();
+        CreateBuckets();
+        PlaceInBucket();
+    }
 }
 
 // GetButton(): Input field that will allow the user to get data from the hash map table.
@@ -299,16 +310,24 @@ function GetValue(e){
     const getInput = document.querySelector('.get-form > div:nth-child(1) > input');
     const getForm = document.querySelector('.get-form');
 
-    let number = Number(getInput.value);
-    console.log(number); // Testing
+    if (getInput.validity.valueMissing)
+    {
+        getInput.setCustomValidity("Please enter a numerical value first.");
+        getInput.reportValidity();
+    }
+    else
+    {
+        let number = Number(getInput.value);
+        console.log(number); // Testing
 
-    getForm.reset(); 
+        getForm.reset(); 
 
-    const HashMapObj = new HashMap(43); 
-
-    dataField.replaceChildren(); // Overall Parent replacing all child nodes. 
-    DisplayGetData(HashMapObj.get(number)); // Note: May Need to reset at some point for new data. 
-    DisplayDataExist(HashMapObj.has(number));
+        const HashMapObj = new HashMap(43); 
+    
+        dataField.replaceChildren(); // Overall Parent replacing all child nodes. 
+        DisplayGetData(HashMapObj.get(number)); // Note: May Need to reset at some point for new data. 
+        DisplayDataExist(HashMapObj.has(number));
+    }
 }
 
 // CreateButtonField(): Creates button field to output data. 
@@ -561,17 +580,32 @@ function SubmitKey(e){
     e.preventDefault();
     const input = document.querySelector('.set-form > div:nth-child(1) > input'); 
     const setForm = document.querySelector('.set-form'); 
-    let string = input.value;
-    setForm.reset(); 
-    console.log('Entered Value: ', string); // Testing 
-
-    const hashMapObj = new HashMap(43); 
-    hashMapObj.hash(string);
-    console.log('The hash code: ', hashMapObj.hashCode); // Testing
-
-    hashMapObj.set(hashMapObj.hashCode, string);
     
-    PlaceInBucket(); 
+    if (input.validity.valueMissing)
+    {
+        input.setCustomValidity('Please enter a name first.');
+        input.reportValidity(); 
+    }
+    else if (Number(input.value))
+    {
+        input.setCustomValidity("Can't use numerical values in this field."); 
+        input.reportValidity(); 
+    }
+    else
+    {
+        let string = input.value;
+
+        setForm.reset(); 
+        console.log('Entered Value: ', string); // Testing 
+    
+        const hashMapObj = new HashMap(43); 
+        hashMapObj.hash(string);
+        console.log('The hash code: ', hashMapObj.hashCode); // Testing
+    
+        hashMapObj.set(hashMapObj.hashCode, string);
+        
+        PlaceInBucket(); 
+    }
 }
 
 // CreateBucketsField(): Creates the buckets field that will hold all the data. 

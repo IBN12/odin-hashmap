@@ -9,11 +9,22 @@ body{
     box-sizing: border-box;
 }
 
+/* font-0 - Comfortaa font */
+@font-face {
+    font-family: comfortaa;
+    src: url(../fonts/comfortaa/Comfortaa-Regular.ttf);
+}
+
+/* Mobile & Desktop Minimization */
+#mobile-minimization{
+    display: none;
+}
+
 /***************************************************************************************************************************************************************************/
 /***************************************************************************************************************************************************************************/
 /* |Main Content| */
 #content{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
@@ -23,8 +34,11 @@ body{
 /***************************************************************************************************************************************************************************/
 /* |Main Title| */
 .main-title-container{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    letter-spacing: 3px;
+    font-size: 25px;
 }
 
 /***************************************************************************************************************************************************************************/
@@ -37,38 +51,138 @@ body{
     flex-direction: column;
     gap: 10px;
     
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     margin-top: 50px;
 }
 
 /* Set Form */
 .set-form{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     text-align: center;
     padding: 10px; 
+    
 }
 .set-form > div:nth-child(1) > label{
     display: block;
+    font-size: 18px;
+    font-weight: bold; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+}
+.set-form > div:nth-child(1) > input{
+    border-radius: 10px;
+    border: 1px solid #94a3b8;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+}
+.set-form > div:nth-child(2) > button{
+    margin-top: 5px;
+    border: 1px solid #94a3b8;
+    border-radius: 10px; 
+    padding: 5px 10px 5px 10px; 
+    font-size: 15px; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+    font-weight: bold; 
+}
+.set-form > div:nth-child(2) > button:hover{
+    cursor: pointer; 
+    background-color: #f87171;
+    border: 1px solid #f87171; 
+}
+.set-form > div:nth-child(2) > button:focus{
+    border-color: #f87171;
+    outline: none;
+}
+.set-form > div:nth-child(1) > input:focus{
+    border-color: #0d9488;
+    outline: none;
 }
 
 /* Get Form */
 .get-form{
-    border: 1px solid purple; 
+    /* border: 1px solid purple;  */
     text-align: center;
     padding: 10px;
 }
 .get-form > div:nth-child(1) > label{
     display: block;
+    font-size: 18px;
+    font-weight: bold; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+}
+.get-form > div:nth-child(1) > input{
+    border-radius: 10px;
+    border: 1px solid #94a3b8;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+}
+.get-form > div:nth-child(2) > button{
+    margin-top: 5px;
+    border: 1px solid #94a3b8;
+    border-radius: 10px; 
+    padding: 5px 10px 5px 10px; 
+    font-size: 15px; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+    font-weight: bold; 
+}
+.get-form > div:nth-child(2) > button:hover{
+    cursor: pointer; 
+    background-color: #f87171;
+    border: 1px solid #f87171;
+}
+.get-form > div:nth-child(2) > button:focus{
+    border-color: #f87171;
+    outline: none; 
+}
+.get-form > div:nth-child(1) > input:focus{
+    border-color: #0d9488;
+    outline: none;
 }
 
 /* Remove Form */
 .remove-form{
-    border: 1px solid lightcoral;
+    /* border: 1px solid lightcoral; */
     text-align: center;
     padding: 10px; 
 }
 .remove-form > div:nth-child(1) > label{
     display: block; 
+    font-size: 18px;
+    font-weight: bold; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+}
+.remove-form > div:nth-child(1) > input{
+    border-radius: 10px;
+    border: 1px solid #94a3b8;
+    padding: 5px 10px 5px 10px;
+    font-size: 15px;
+}
+.remove-form > div:nth-child(2) > button{
+    margin-top: 5px;
+    border: 1px solid #94a3b8;
+    border-radius: 10px; 
+    padding: 5px 10px 5px 10px; 
+    font-size: 15px; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #18181b;
+    font-weight: bold; 
+}
+.remove-form > div:nth-child(2) > button:hover{
+    cursor: pointer;
+    background-color:#f87171;
+    border: 1px solid #f87171;
+}
+.remove-form > div:nth-child(2) > button:focus{
+    border-color: #f87171;
+    outline: none;
+}
+.remove-form > div:nth-child(1) > input:focus{
+    border-color: #0d9488;
+    outline: none; 
 }
 
 /***************************************************************************************************************************************************************************/
@@ -82,7 +196,7 @@ body{
     gap: 10px;
     
     margin-top: 50px;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     text-align: center; 
 }
 
@@ -90,15 +204,16 @@ body{
 .bucket-field > div{
     width: 150px;
     height: 150px;
-    border: 1px solid black; 
+    /* border: 1px solid black;  */
     background-image: url('../images/Bucket-cropped.png');
     background-size: 100% 100%;
 }
 
-/* Bucket Image */
-.bucket-field > div > img[src]{
-    width: 100%;
-    height: 100%; 
+.bucket-field > div > div{ /* Bucket index and value */
+    color: red;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 
@@ -108,31 +223,49 @@ body{
 .data-field{
     display: flex;
     justify-content: center;
-    gap: 5px; 
+    gap: 10px; 
 
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     margin-top: 50px;
 }
-.data-field > div{
-    border: 1px solid lightcoral;
+.data-field > div{ /* Data Containers */
+    border: 1px solid #94a3b8;
+    padding: 10px; 
+    border-radius: 10px;
+}
+.data-field > div > div:nth-child(1){ /* Data Title */
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 15px; 
+}
+.data-field > div > div:nth-child(2){ /* Data Value */
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 15px;
 }
 
 /* Keys Data */
 .keys-data > div:nth-child(2){
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* Values Data */
 .values-data > div:nth-child(2){
     display: flex;
+    flex-wrap: flex;
     gap: 10px; 
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* Entries Data */
 .entries-data > div:nth-child(2){
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /***************************************************************************************************************************************************************************/
@@ -141,9 +274,50 @@ body{
 .button-field{
     display: flex;
     justify-content: center;
-    gap: 5px;
+    gap: 15px;
 
-    border: 1px solid lightblue;
+    /* border: 1px solid lightblue; */
     margin-top: 50px;
 }
+.button-field > button{ 
+    font-size: 15px;
+    font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: bold; 
+    border-radius: 10px; 
+    border: 1px solid #94a3b8;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+}
+.button-field > button:hover{
+    background-color: #f87171;
+    border: 1px solid #f87171;
+}
+.button-field > button:focus{
+    border: 1px solid #0d9488;
+    outline: none;  
+}
 
+
+/***************************************************************************************************************************************************************************/
+/***************************************************************************************************************************************************************************/
+/* |Mobile Section| */
+/* Media-0 - Will display that mobile and desktop minimization doesn't exist. */
+@media only screen and (max-width: 1019px){
+    body{
+        background: linear-gradient(to left, #6441A5, #2a0845);
+    }
+
+    #content{
+        display: none; 
+    }
+    
+    #mobile-minimization{
+        display: block;
+        text-align: center; 
+        font-size: 20px; 
+        font-weight: bold;
+        font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        color: white; 
+        margin-top: 30px;
+    }
+}
