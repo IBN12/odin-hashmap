@@ -1,9 +1,9 @@
 # HashMap Project
 
 ## Introduction
-HashMap is data structure that stores data into a bucket storage system. The data is usually string data type
-that is inputted into a hash function and outputted as a hash code. The hash code is a numeric or alphanumeric 
-string. Hashing thes same input should always return the same hash code, and there should be no random generation
+HashMap is a data structure that stores data into a bucket storage system. The data is usually a string type
+that is passed into a hash function and outputted as a hash code. The hash code is a numeric or alphanumeric 
+string. Hashing the same input should always return the same hash code, and there should be no random generation
 component. 
 
 Buckets will appear as an array data structure that will store the hash code data. The hash function returns a number
@@ -15,7 +15,7 @@ the key. Example using the name John:
 
 Collisions should be avoided, if possible. A Collision occurs when two different keys generate the exact same hash code. 
 Because they have the same hash code, they will land in the same bucket. There are many hash functions and specialized
-techniques that can help prevent collisions, but none are perfect which means collisions still find a way at creeping
+techniques that can help prevent collisions, but none are perfect, which means collisions still find a way to creep
 in. However, for this project, if a key already exists, then the old value is overwritten and updated with the new value. 
 
 ## Hash Function
@@ -26,7 +26,7 @@ for this project. In this method we map a key into one of the slots by taking th
 hashCode = number % table_size;
 
 When using the division method, we usually avoid certain values of <b>table_size</b>. <b>table_size</b> should not be the value
-from the power of a number. It has been found that the bestresults with the division method are achieved when the table size is
+from the power of a number. It has been found that the best results with the division method are achieved when the table size is
 prime. However if <b>table_size</b> is prime, an additional restriction is called for. 
 
 A prime not to close to an exact power of 2 is often good choice for <b>table_size</b>:
@@ -63,3 +63,7 @@ Example: <b>[[firstKey, firstValue], [secondKey, secondValue]]</b>
 
 Hash map do not preserve insertion order when you are retrieving your hash map's data. It is normal and expected for
 keys and values to appear out of the order you inserted them in. 
+
+<img src="./src/images/odin-hashmap.PNG" />
+
+## Live Demo

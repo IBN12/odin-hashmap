@@ -285,8 +285,6 @@ function RemoveValue(e){
         const HashMapObj = new HashMap(43); 
     
         dataField.replaceChildren(); 
-        console.log('Removal Index: ', number); // Testing
-        console.log('Removal Index Type: ', typeof(number)); // Testing 
     
         DisplayRemovedData(HashMapObj.remove(number)); 
         bucketField.replaceChildren();
@@ -318,7 +316,6 @@ function GetValue(e){
     else
     {
         let number = Number(getInput.value);
-        console.log(number); // Testing
 
         getForm.reset(); 
 
@@ -596,11 +593,9 @@ function SubmitKey(e){
         let string = input.value;
 
         setForm.reset(); 
-        console.log('Entered Value: ', string); // Testing 
     
         const hashMapObj = new HashMap(43); 
         hashMapObj.hash(string);
-        console.log('The hash code: ', hashMapObj.hashCode); // Testing
     
         hashMapObj.set(hashMapObj.hashCode, string);
         
@@ -620,7 +615,7 @@ function CreateBucketField(){
 // CreateBuckets(): Will create buckets for the bucket field. 
 export function CreateBuckets(){
     const bucketField = document.querySelector('.bucket-field'); 
-    console.log('Set of buckets in the field: ', bucketField); // Testing
+
     for (let i = 0; i < buckets.length; i++)
     {
         const bucket = document.createElement('div');
@@ -655,9 +650,6 @@ export function PlaceInBucket(){
         }
         else if (buckets[i] !== null && bucketsInField[i].children.item(1))
         {
-            console.log(bucketsInField[i].children.item(0)); // Testing
-            console.log(bucketsInField[i].children.item(1)); // Testing
-
             bucketsInField[i].replaceChildren();
 
             const bucketIndex = document.createElement('div');

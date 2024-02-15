@@ -1,53 +1,6 @@
 import { buckets } from "../utils/Buckets";
 import { CreateBuckets } from "./DomContent";
 import { PlaceInBucket } from "./DomContent";
-/** |Project: HashMap|
- * => Assignment:
- * 1. Start by creating a HashMap class or factory function. It's up to you which you want to use.
- * Then proceed to create the following methods: 
- * 
- * 2. hash takes a value and produces a hash code with it. We did implement a fairly good hash
- * function in the previous lesson. You are free to use that, or if you wish, you can conduct your own
- * research. Beware, this is a deep deep rabbit hole.
- * 
- * Note: Hash maps could accommodate various data types for keys like 
- * numbers, strings, objects. But for this project, only handle keys 
- * of type strings. 
- * 
- * 3. set(key, value) takes two arguments, the first is a key and the second is a value that is assigned
- * to this key. If a key already exists, then the old value is overwritten.
- * 
- * Remember to grow your buckets size when it needs to, by calculating if 
- * your bucket has reached the 'load factor'. 
- * 
- * 4. get(key) takes one argument as a key and returns the value that is assigned to this
- * key. If a key is not found, return null. 
- * 
- * 5. remove(key) takes a key argument. If the given key is in the hash map, it should 
- * remove the entry with that key and return true. If the key isn't in the hash map, it
- * should return false. 
- * 
- * 6. length() returns the number of stored keys in the hash map. 
- * 
- * 7. clear() removes all entries in the hash map. 
- * 
- * 8. keys() returns an array containing all the keys inside the hash map.
- * 
- * 9. values() returns an array containing all the values.
- * 
- * 10. entries() returns an array that contains each 'key', 'value' pair. Example:
- * [[firstKey, firstValue]], [secondKey, secondValue].
- * 
- * Remember that a hash map does not preserve insertion order when you are retrieving your hash map's data.
- * It is normal and expected for keys and values to appear out of the order you inserted them in. 
- */
-
-// HashMap Factory Function Test:
-// const HashMap = () => {
-//     const testReturn = 1;
-
-//     return {testReturn};
-// }
 
 // HashMap Class Test: 
 export class HashMap{
@@ -78,8 +31,6 @@ export class HashMap{
     }
 
     set(key, value){
-        console.log('HashMap Class key: ', key); // Testing
-        console.log('HashMap Class value: ', value); // Testing 
         let valuesInBuckets = 0;
         let increaseBuckets = 0;
         let placedInsideBucket = false;
@@ -115,8 +66,6 @@ export class HashMap{
 
         if ((key < 0 || key >= buckets.length) && !(itemFound))
         {
-            console.log('Trying to access index out of bounds.'); // Testing
-            console.log('Assigning the value to the most current empty index.'); // Testing 
             for (let i = 0; i < buckets.length; i++)
             {
                 if (buckets[i] === null && !placedInsideBucket)
@@ -136,9 +85,6 @@ export class HashMap{
             }
         }
 
-        console.log(buckets) // Testing
-        console.log('\n'); // Testing 
-
         // Test if the bucket has reached the default load factor. 
         // Note: This test could be in its own function.
         buckets.forEach((item) => {
@@ -149,8 +95,6 @@ export class HashMap{
                 
             if ((Math.floor(buckets.length * this.loadFactor)) === valuesInBuckets)
             {
-                // Grow the 'Buckets Array' by a certain size. 
-                console.log('Buckets Array Will Grow'); // Testing 
                 while(increaseBuckets < this.loadIncrease)
                 {
                     increaseBuckets++;
@@ -158,14 +102,12 @@ export class HashMap{
                     buckets[buckets.length - 1] = null;
                 }
 
-                console.log('Buckets: ', buckets); // Testing 
                 const bucketField = document.querySelector('.bucket-field');
                 bucketField.replaceChildren();
                 CreateBuckets();
                 PlaceInBucket();
             }
         });
-        console.log(valuesInBuckets); // Testing 
     }
     
     get(key){
@@ -251,9 +193,6 @@ export class HashMap{
             buckets.push(null); 
             bucketIndexReached++;
         }
-
-        console.log('Buckets after clearing entries: ', buckets); // Testing   
-        console.log('\n'); // Testing 
     }
 
     keys(){
@@ -265,8 +204,6 @@ export class HashMap{
             }
         });
 
-        console.log('The keys inside the hash map: ', keysOnHashTable); // Testing
-        console.log('\n'); // Testing 
         return keysOnHashTable;
     }
 
@@ -279,8 +216,6 @@ export class HashMap{
             }
         });
 
-        console.log('The values inside the hash map: ', valuesOnHashTable); // Testing 
-        console.log('\n'); // Testing 
         return valuesOnHashTable; 
     }
 
@@ -293,8 +228,6 @@ export class HashMap{
             }
         });
 
-        console.log('The entries inside the hash map: ', entriesOnHashTable); // Testing
-        console.log('\n'); // Testing
         return entriesOnHashTable; 
     }
 }
