@@ -24,7 +24,6 @@ body{
 /***************************************************************************************************************************************************************************/
 /* |Main Content| */
 #content{
-    /* border: 1px solid red; */
     margin: 0 auto;
     width: 1000px;
     padding: 10px;
@@ -34,7 +33,6 @@ body{
 /***************************************************************************************************************************************************************************/
 /* |Main Title| */
 .main-title-container{
-    /* border: 1px solid black; */
     text-align: center;
     font-family: comfortaa, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 3px;
@@ -51,13 +49,11 @@ body{
     flex-direction: column;
     gap: 10px;
     
-    /* border: 1px solid orange; */
     margin-top: 50px;
 }
 
 /* Set Form */
 .set-form{
-    /* border: 1px solid blue; */
     text-align: center;
     padding: 10px; 
     
@@ -101,7 +97,6 @@ body{
 
 /* Get Form */
 .get-form{
-    /* border: 1px solid purple;  */
     text-align: center;
     padding: 10px;
 }
@@ -144,7 +139,6 @@ body{
 
 /* Remove Form */
 .remove-form{
-    /* border: 1px solid lightcoral; */
     text-align: center;
     padding: 10px; 
 }
@@ -196,7 +190,6 @@ body{
     gap: 10px;
     
     margin-top: 50px;
-    /* border: 1px solid green; */
     text-align: center; 
 }
 
@@ -204,7 +197,6 @@ body{
 .bucket-field > div{
     width: 150px;
     height: 150px;
-    /* border: 1px solid black;  */
     background-image: url('../images/Bucket-cropped.png');
     background-size: 100% 100%;
 }
@@ -216,7 +208,6 @@ body{
     font-size: 18px;
 }
 
-
 /***************************************************************************************************************************************************************************/
 /***************************************************************************************************************************************************************************/
 /* |Data Fields| */
@@ -225,7 +216,6 @@ body{
     justify-content: center;
     gap: 10px; 
 
-    /* border: 1px solid yellow; */
     margin-top: 50px;
 }
 .data-field > div{ /* Data Containers */
@@ -276,7 +266,6 @@ body{
     justify-content: center;
     gap: 15px;
 
-    /* border: 1px solid lightblue; */
     margin-top: 50px;
 }
 .button-field > button{ 

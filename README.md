@@ -30,6 +30,7 @@ from the power of a number. It has been found that the best results with the div
 prime. However if <b>table_size</b> is prime, an additional restriction is called for. 
 
 A prime not to close to an exact power of 2 is often good choice for <b>table_size</b>:
+<br />
 2^4 = 16, 17 for the <b>table_size</b> is to close to an exact power of 2. 
 
 2^5 = 32 & 2^6 = 64, maybe a prime number between 32 and 64 would be more suitable. 
@@ -67,3 +68,4 @@ keys and values to appear out of the order you inserted them in.
 <img src="./src/images/odin-hashmap.PNG" />
 
 ## Live Demo
+[HashMap Project](https://ibn12.github.io/odin-hashmap/)
